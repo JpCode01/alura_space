@@ -1,18 +1,12 @@
+{% extends 'shared/base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-br">
+{% block content %}
 
 <head>
     {% include 'partials/_head.html' %}
 </head>
 
-<body>
-    <div class="pagina-inicial">
-        {% include 'partials/_header.html' %}
-        <main class="principal">
-            {% include 'partials/_menu_usuarios.html' %}
-            <section class="galeria" style="margin-left: 5em">
+         <section class="galeria" style="margin-left: 5em">
                 <form action="{% url 'login' %}" method="POST">
                     {% csrf_token %}
                     <div class="row">
@@ -32,4 +26,4 @@
     </div>
 </body>
 
-{% include 'partials/_footer.html' %}
+{% endblock%}
